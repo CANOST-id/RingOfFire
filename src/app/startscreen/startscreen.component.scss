@@ -1,0 +1,92 @@
+.start-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fb3f3f;
+    background: radial-gradient(circle, rgba(251, 63, 63, 1) 0%, rgba(99, 54, 69, 1) 46%);
+    text-align: center;
+
+    >h1 {
+        font-size: 150px;
+        color: #333;
+        font-family: "stone-board";
+    }
+}
+
+.spinner-left {
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    >.slider-left {
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        animation: autoRunVertical 20s linear infinite;
+    }
+
+    >.slider-left img {
+        position: absolute;
+        inset: 0 0 0 0;
+        transform: rotateX(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(200px);
+        transform-origin: center center;
+    }
+
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.spinner-right {
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    >.slider-right {
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        top: 50%;
+        right: 20%;
+        transform: translateY(-50%);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        animation: autoRunVertical 20s linear infinite reverse;
+    }
+
+    >.slider-right img {
+        position: absolute;
+        inset: 0 0 0 0;
+        transform: rotateX(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(200px);
+        transform-origin: center center;
+    }
+
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@keyframes autoRunVertical {
+    from {
+        transform: translateY(-50%) rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: translateY(-50%) rotateX(360deg) rotateY(360deg);
+    }
+}
