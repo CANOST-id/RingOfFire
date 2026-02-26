@@ -1,0 +1,25 @@
+<section class="game-content">
+
+    <h1>RING OF FIRE</h1>
+
+    <h2>PICK<br>A<br>CARD</h2>
+    <section class="card-stack">
+
+
+        <img 
+        *ngFor="let card of [0, 1, 2, 3, 4];  let card_index = index" 
+        [ngStyle]="{ 'left.px': (card_index * 8)}"
+        src="/assets/images/card_cover.png" alt="card cover">
+
+        <img class="top-card" style="left: 32px;"
+            (click)="takeCard()"
+            src="/assets/images/card_cover.png" alt="animated card cover">
+        
+        <img class="pick-card" style="left: 32px;"
+            *ngIf="pickCardAnimation"
+            (click)="takeCard()"
+            src="/assets/images/ace_1.png" alt="showed card">
+
+    </section>
+
+</section>
