@@ -1,0 +1,68 @@
+.game-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fb3f3f;
+    background: radial-gradient(circle, rgba(251, 63, 63, 1) 0%, rgba(99, 54, 69, 1) 46%);
+
+    > h1 {
+        position: absolute;
+        top: 120px;
+        font-size: 120px;
+    }
+    > h2 {
+        text-align: center;
+        position: absolute;
+        top: 350px;
+        left: 40%;
+        font-size: 54px;
+    }
+}
+
+.card-stack {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >img {
+        position: absolute;
+        height: 200px;
+    }
+}
+
+.top-card {
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(20px);
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.pick-card {
+    transition: all 0.2s ease-in-out;
+    transform: translateX(50px) translateY(280px) scale(1.3) rotate(10deg);
+    animation: pick-card-animation 1.5s ease-in-out;
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    20% {
+        transform: translateY(0) scale(1.3);
+    }
+
+    50% {
+        transform: translateY(0) scale(1.3);
+    }
+
+    100% {
+        transform: translateX(50px) translateY(280px) scale(1.3) rotate(10deg);
+    }
+}
