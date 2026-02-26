@@ -9,6 +9,7 @@ import { StartscreenComponent } from './startscreen/startscreen.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'RingOfFire';
 }
