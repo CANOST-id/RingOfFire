@@ -49,6 +49,13 @@
     animation: pick-card-animation 1.5s ease-in-out;
 }
 
+.played-card {
+    left: 32px;
+    position: absolute;
+    height: 200px;
+    transform: translateX(50px) translateY(280px) scale(1.3) rotate(10deg);
+}
+
 @keyframes pick-card-animation {
     0% {
         transform: translateY(0) scale(1);
