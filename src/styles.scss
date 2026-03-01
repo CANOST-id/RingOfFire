@@ -5,6 +5,8 @@
     font-family: 'stone-board';
 }
 
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 @font-face {
     font-family: "stone-board";
     src: url('/assets/font/Stone-Board-Rought.otf') format('opentype');
