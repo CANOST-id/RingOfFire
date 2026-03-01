@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Add Player</h1>
+<ol>
+    <li>
+        <mat-form-field>
+            <mat-label>Please enter your name</mat-label>
+            <input matInput [(ngModel)]="name" />
+        </mat-form-field>
+    </li>
+    <li>
+        <button mat-button (click)="addPlayer()">Add Player</button>
+    </li>
+    <li>
+        You chose: <em>{{ name }}</em>
+    </li>
+</ol>
