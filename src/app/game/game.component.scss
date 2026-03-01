@@ -1,3 +1,8 @@
+app-player {
+    position: absolute;
+    display: block;
+}
+
 .game-content {
     height: 100vh;
     width: 100%;
@@ -7,18 +12,23 @@
     flex-direction: column;
     background: #fb3f3f;
     background: radial-gradient(circle, rgba(251, 63, 63, 1) 0%, rgba(99, 54, 69, 1) 46%);
-
-    > h1 {
+    
+    >h1 {
+        font-family: 'stone-board' !important;
         position: absolute;
         top: 120px;
         font-size: 120px;
     }
-    > h2 {
-        text-align: center;
+
+    >h2 {
         position: absolute;
         top: 350px;
         left: 40%;
         font-size: 54px;
+        white-space: nowrap !important;
+        text-align: center !important;
+        line-height: 1 !important;
+        font-family: inherit !important;
     }
 }
 
@@ -72,4 +82,11 @@
     100% {
         transform: translateX(50px) translateY(280px) scale(1.3) rotate(10deg);
     }
+}
+
+button[mat-fab] {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
