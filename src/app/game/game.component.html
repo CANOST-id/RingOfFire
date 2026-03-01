@@ -1,4 +1,5 @@
-<app-player></app-player>
+<app-player [name]="player" *ngFor="let player of game?.players; let i = index"
+    [ngStyle]="{'top.px': 20 + (i * 110)}"></app-player>
 
 <section class="game-content">
 
@@ -14,10 +15,15 @@
         <img class="top-card" style="left: 32px;" (click)="takeCard()" src="/assets/images/card_cover.png"
             alt="animated card cover">
 
-        <img *ngFor="let card of game?.playedCards" class="played-card" src="/assets/images/{{ card}}.png" alt="played card">
+        <img *ngFor="let card of game?.playedCards" class="played-card" src="/assets/images/{{ card}}.png"
+            alt="played card">
 
         <img class="pick-card" style="left: 32px;" *ngIf="pickCardAnimation" (click)="takeCard()"
             src="/assets/images/{{currentCard}}.png" alt="showed card">
     </section>
 
 </section>
+
+<button mat-fab color="primary" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+</button>
