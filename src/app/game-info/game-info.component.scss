@@ -1,0 +1,17 @@
+mat-card {
+    background-color: rgb(224, 81, 110);
+}
+mat-card-title {
+    font-family: 'stone-board' !important;
+    padding: 5px 15px;
+    font-size: 32px;
+    > h2 {
+        font-size: 32px;
+        font-family: 'stone-board' !important;
+    }
+}
+
+mat-card-content {
+    font-family: 'stone-board' !important;
+    font-size: 20px;
+}
