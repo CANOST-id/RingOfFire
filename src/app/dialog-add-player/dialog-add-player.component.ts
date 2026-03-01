@@ -29,4 +29,5 @@ export class DialogAddPlayerComponent {
   addPlayer() {
     console.log(this.name);
   }
+  
 }
