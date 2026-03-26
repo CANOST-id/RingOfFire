@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { GameInfoComponent } from '../game-info/game-info.component';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-game',
   standalone: true,
@@ -20,10 +22,15 @@ export class GameComponent implements OnInit {
   currentCard?: string = '';
   pickCardAnimation = false;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private firestore: Firestore) { }
 
   ngOnInit(): void {
     this.newGame();
+    
+    const gamesCollection = collection(this.firestore, 'games');
+    collectionData(gamesCollection).subscribe(games => {
+      console.log('Game Update', games);
+    });
   }
 
   newGame() {
@@ -57,4 +64,4 @@ export class GameComponent implements OnInit {
       }
     });
   }
-} 
+}
