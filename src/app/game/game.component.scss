@@ -88,7 +88,7 @@ header {
 
 button[mat-fab] {
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
     z-index: 1000;
 }
@@ -96,8 +96,9 @@ button[mat-fab] {
 .pin-bottom {
     position: absolute;
     bottom: 15px;
-    left: 100px;
-    right: 100px;
+    left: 15px;
+    right: 15px;
+    text-align: center;
 }
 
 @media (max-width: 660px) {
